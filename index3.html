@@ -4,6 +4,8 @@
 <head>
 	<title>A-Frame - Video Texture</title>
 	<script src="js/aframe-master-v1.3.0.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
 
 <body>
@@ -41,11 +43,30 @@ AFRAME.registerComponent('video-controls', {
 </script>
 
 <a-scene>
-	
+	<a-assets>
+        <video src="glow800AR.mp4"
+            preload="auto" id="vid2" response-type="arraybuffer" loop
+            crossorigin webkit-playsinline autoplay muted playsinline>
+       </video>
+    </a-assets>
+    <a-nft
+        videohandler
+        type='nft' url='\AframeWebMain\photo\photo'
+        smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+    >
+        <a-video
+            src="#vid"
+            position='50 150 -100'
+            rotation='90 0 180'
+            width='300'
+            height='175'
+            >
+        </a-video>
+    </a-nft>
 	<a-assets timeout="10000">
-		<img id="grid" src="images/border.png" crossorigin="anonymous" />
-		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
-		<video id="video" loop="true" src="video/sintel.mp4" autoplay></video>
+		<!-- <img id="grid" src="images/border.png" crossorigin="anonymous" />
+		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" /> -->
+		<video id="vid" loop="true" src="glow800AR.mp4" autoplay></video>
 	</a-assets>
 
 	<a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
@@ -70,7 +91,7 @@ AFRAME.registerComponent('video-controls', {
 	</a-plane>
 	
 	<a-plane
-		id = "video-border"
+		id = "vid"
 		width = "17" height = "10"
 		position = "0 5 -20"
 		color = "#440000"
@@ -79,7 +100,7 @@ AFRAME.registerComponent('video-controls', {
 			id = "video-display"
 			width="16" height="9" 
 			position="0 0 0.1"
-			src="#video">
+			src="glow800AR.mp4">
 		</a-video>
 	</a-plane>
 	
