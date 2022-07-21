@@ -69,7 +69,7 @@
 
         <a-assets>
             <video src="mov_bbb.mp4"
-                preload="auto" id="video-border" response-type="arraybuffer" loop
+                preload="auto" id="vid" response-type="arraybuffer" loop
                 crossorigin webkit-playsinline autoplay muted playsinline>
            </video>
         </a-assets>
@@ -100,19 +100,6 @@
             type='nft' url='\AframeWebMain\glow800\glow800'
             smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
         >
-        <a-plane
-		id = "video-border"
-		width = "17" height = "10"
-		position = "0 5 -20"
-		color = "#440000"
-		video-controls>		
-		<a-video  
-			id = "video-display"
-			width="16" height="9" 
-			position="0 0 0.1"
-			src="mov_bbb.mp4">
-		</a-video>
-	</a-plane>
             <a-video
                 src="#vid2"
                 position='50 150 -100'
@@ -151,7 +138,8 @@
             position="50 150 -100"
         ></a-entity>
 </a-nft>
-<a-entity camera  position="0 0 0"></a-entity>
+
+       <a-entity camera  position="0 0 0"></a-entity>
 	</a-scene>
 </body>
 </html>
