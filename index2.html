@@ -109,18 +109,27 @@
                 >
             </a-video> -->
             <a-plane
-		id = "video-border"
-		width = "300" height = "175"
-		position = "90 0 -180"
-		color = "#FFF"
-		video-controls>		
-		<a-video  
-			id = "video-display"
-			width="300" height="175" 
-			position="90 0 -180"
-			src="#vid2">
-		</a-video>
-	</a-plane>
+            width="100" height="100"
+            position=" 0.00 0.00 0.00" 
+            rotation="-90 0 0" 
+            color="#888888" 
+            material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
+            shadow="cast: false; receive: true">
+        </a-plane>
+        
+        <a-plane
+            id = "video-border"
+            width = "17" height = "10"
+            position = "0 5 -20"
+            color = "#FFF"
+            video-controls>		
+            <a-video  
+                id = "video-display"
+                width="16" height="9" 
+                position="0 0 0.1"
+                src="#vid2">
+            </a-video>
+        </a-plane>
         </a-nft>
         <a-nft
         type="nft"
